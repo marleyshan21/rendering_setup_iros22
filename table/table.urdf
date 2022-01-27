@@ -13,14 +13,14 @@
     <visual>
     <origin rpy="0 0 0" xyz="0 0 0.39"/>
       <geometry>
-        <mesh filename="/root/ocrtoc_ws/src/pybullet_tests/table/visual/table.dae"/>
+        <mesh filename="/root/ocrtoc_ws/src/rendering_setup_iros22/table/visual/table.dae"/>
       </geometry>
       <material name="grey"/>
     </visual>
     <collision>
     <origin rpy="0 0 0" xyz="0 0 0.39"/>
       <geometry>
-        <mesh filename="/root/ocrtoc_ws/src/pybullet_tests/table/visual/table.dae"/>
+        <mesh filename="/root/ocrtoc_ws/src/rendering_setup_iros22/table/visual/table.dae"/>
       </geometry>
     </collision>
   </link>
