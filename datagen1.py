@@ -210,7 +210,13 @@ class DataGen():
                     self.save_data(img, pcd_r, R, each_model_path, rotation)
 
     def main(self):
-        self.done_list = []
+        # self.done_list = ['stapler_1', 'conditioner', 'spoon', 'yellow_bowl', 
+
+        # ]
+
+        issue_list = []
+        count = 0
+        
         for root, subdirectories, files in os.walk(self.directory):
             for self.subdirectory in subdirectories:
                 
@@ -228,20 +234,26 @@ class DataGen():
                     self.texture_path = os.path.join(folder_path, 'texture_map.jpg')
                 elif os.path.exists(os.path.join(folder_path, 'texture_map.png')):
                     self.texture_path = os.path.join(folder_path, 'texture_map.png')
+                    count = count + 1
+                    issue_list.append(self.subdirectory )
 
                 else:
                     self.texture_path = os.path.join(folder_path, 'textured_map.jpg')
+                    print(folder_path)
+                    print(1)
 
                 each_model_path = self.save_directory
                 
                 try:
-                    self.data_gen(each_model_path)
+                    # self.data_gen(each_model_path)
                     self.done_list.append(self.subdirectory)
                     print("Done: ", self.subdirectory )
                 except:
                     self.fail_list.append(self.subdirectory)
                     print("Failed: ", self.subdirectory)
-                
+
+            print(count)
+        print(issue_list)
                 
                 
 
